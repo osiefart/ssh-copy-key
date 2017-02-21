@@ -1,10 +1,7 @@
 ---
 - hosts: servers
 
-  tasks:
-
-  - name: Set authorized key took from file
-    authorized_key:
-      user: vagrant
-      state: present
-      key: "{{ lookup('file', '/Users/osiefart/.ssh/id_rsa.pub') }}"
+  roles:
+    - ssh
+    - java
+    - hello-world

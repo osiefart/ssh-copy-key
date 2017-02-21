@@ -1,0 +1,9 @@
+---
+
+- name: install java
+  apt: name={{item}} state=latest update_cache=yes
+  become: true
+  with_items:
+   - openjdk-7-jre-headless
+   - openjdk-7-jre
+   - openjdk-7-jdk

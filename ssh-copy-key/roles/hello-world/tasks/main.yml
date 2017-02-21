@@ -1,0 +1,14 @@
+---
+
+- copy:
+    src: hello-world.jar
+    dest: /usr/local/hello-world.jar
+    mode: u=rwx,g=rx,o=x
+  become: true
+
+- copy:
+    src: service.sh
+    dest: /etc/init.d/service.sh
+    mode: u=rwx,g=rx,o=x
+  become: true
+
