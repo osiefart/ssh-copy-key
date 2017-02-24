@@ -1,7 +1,28 @@
 ---
+
 - hosts: servers
 
   roles:
     - ssh
     - java
     - hello-world
+    - watch
+
+
+- hosts: localhost
+  connection: local
+
+  roles:
+    - watch
+
+  #tasks:
+
+    #- name: test
+    #  local_action: "shell ssh vagrant@{{ inventory_hostname }} 'tail -f /tmp/error' > /tmp/{{ inventory_hostname }}.out4"
+    #  async: 450
+    #  poll: 0
+
+
+      # local_action: "shell ssh vagrant@{{ item }} 'tail -f /tmp/out' > /tmp/{{ item }}.out2"
+      # with_items: "{{ groups['servers'] }}"
+      #delegate_to: 127.0.0.1

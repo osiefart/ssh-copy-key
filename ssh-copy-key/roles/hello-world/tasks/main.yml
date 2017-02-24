@@ -1,14 +1,17 @@
 ---
 
-- copy:
+- name: copy jar
+  copy:
     src: hello-world.jar
     dest: /usr/local/hello-world.jar
     mode: u=rwx,g=rx,o=x
   become: true
 
-- copy:
+- name: copy init.d script
+  copy:
     src: service.sh
     dest: /etc/init.d/service.sh
     mode: u=rwx,g=rx,o=x
   become: true
 
+# starten des ervices und umbenennung todo:

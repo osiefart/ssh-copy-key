@@ -1,0 +1,4 @@
+---
+
+- name: create some file
+  template: src=show-logs.j2 dest=/tmp/test.sh mode=0700

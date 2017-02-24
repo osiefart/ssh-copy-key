@@ -1,0 +1,5 @@
+#!/bin/sh
+{% for host in groups['servers'] %}
+    ssh vagrant@{{ host }} "tail -f /tmp/error" > /tmp/{{ host }}.out5 &;
+{% endfor %}
+read -p "Press enter to exit"
